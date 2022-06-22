@@ -9,8 +9,9 @@ export default async function handler(req, res) {
         payment_method_types: ["card"],
         billing_address_collection: "auto",
         shipping_options: [
-          { shipping_rate: "shr_1LCK5cAMkTIoci1XeCcfha57" },
-          { shipping_rate: "shr_1LCGPHAMkTIoci1X5lXHfNJp" },
+          { shipping_rate: "shr_1LDQ7sFrWQRyufUmJ6F1xwjV" },
+          { shipping_rate: "shr_1LDQ76FrWQRyufUmJk8cDqJY" },
+          { shipping_rate: "shr_1LDQ61FrWQRyufUm9gZzwVsy" },
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
