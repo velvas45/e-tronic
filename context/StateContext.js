@@ -18,6 +18,10 @@ export const StateContext = ({ children }) => {
       (item) => item._id === product._id
     );
 
+    console.log(checkProductInCart);
+
+    console.log(product);
+
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
@@ -29,6 +33,7 @@ export const StateContext = ({ children }) => {
             ...cartProduct,
             quantity: cartProduct.quantity + quantity,
           };
+        return { ...cartProduct };
       });
 
       setCartItems(updatedCartItems);

@@ -276,8 +276,10 @@ span.text-red {
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -25%;
+  top: -35%;
   left: 25%;
+  width: 600px;
+  height: 600px;
 }
 .banner-desc .right {
   line-height: 1.4;
@@ -364,6 +366,7 @@ span.text-red {
 
 .product-shop-container {
   padding: 2rem 0;
+  min-height: 600px;
 }
 .product-container {
   margin-top: 15px;
@@ -375,6 +378,17 @@ span.text-red {
   display: flex;
   gap: 30px;
   padding: 20px;
+}
+
+.product-see-more {
+  color: #594fb7;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-see-more:hover {
+  border-bottom: 1px solid #594fb7;
+  transform: scale(1.05);
 }
 
 .product-by-category {

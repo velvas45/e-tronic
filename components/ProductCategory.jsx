@@ -10,7 +10,9 @@ const ProductCategory = ({ data }) => {
         <h3>{data.name}</h3>
         {data.products?.length > 4 && (
           <Link href={`/product/category/${data.name}`}>
-            <p style={{ cursor: "pointer" }}>See more</p>
+            <p className="product-see-more" style={{ cursor: "pointer" }}>
+              See more
+            </p>
           </Link>
         )}
       </div>
