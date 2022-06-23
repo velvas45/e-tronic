@@ -1,5 +1,5 @@
 {
-  "name": "etronic",
+  "name": "backendetronic",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.30.1",
-    "@sanity/core": "^2.30.1",
+    "@sanity/core": "^2.30.2",
     "@sanity/default-layout": "^2.30.1",
     "@sanity/default-login": "^2.30.1",
     "@sanity/desk-tool": "^2.30.1",
@@ -27,5 +27,9 @@
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/velvas45/e-tronic.git"
+  }
 }

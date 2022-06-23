@@ -6,6 +6,6 @@ import banner from "./banner";
 import category from "./category";
 
 export default createSchema({
-  name: "default",
+  name: "etronic",
   types: schemaTypes.concat([product, banner, category]),
 });

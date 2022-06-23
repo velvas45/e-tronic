@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Etronic"
+    "name": "backend_etronic"
   },
   "api": {
-    "projectId": "fa8vrx9s",
+    "projectId": "r7n6ci0r",
     "dataset": "production"
   },
   "plugins": [
