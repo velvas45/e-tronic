@@ -861,6 +861,7 @@ span.text-red {
   }
 
   .footer-banner-image {
+    width: max-content;
     top: 5%;
     right: 0;
     height: 200px;

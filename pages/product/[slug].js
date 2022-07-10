@@ -114,7 +114,7 @@ export async function getServerSideProps({ params: { slug } }) {
   const productsQuery = '*[_type == "product"]{ ..., category-> }';
 
   const product = await client.fetch(query);
-  console.log(product);
+  // console.log(product);
   const products = await client.fetch(productsQuery);
   // console.log(products);
   const indexSpliceArr = products.findIndex(
