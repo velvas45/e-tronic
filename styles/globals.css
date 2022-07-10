@@ -125,6 +125,7 @@ span.text-red {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #324d67;
+  min-height: 350px;
 }
 /* .product-card:hover {
   transform: scale(1.1, 1.1);
@@ -138,7 +139,10 @@ span.text-red {
   background-color: #f6f2ff;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
-  width: 100%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .product-name {
@@ -276,13 +280,16 @@ span.text-red {
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -35%;
-  left: 25%;
-  width: 600px;
-  height: 600px;
+  top: -20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
 }
 .banner-desc .right {
   line-height: 1.4;
+  transform: translateX(20px);
 }
 .banner-desc .right h3 {
   font-weight: 800;
@@ -701,23 +708,26 @@ span.text-red {
   .hero-banner-container {
     height: 560px;
   }
+
   .hero-banner-image {
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    width: 400px;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 20px;
   }
   .footer-banner-container {
-    height: 560px;
+    height: 720px;
     margin-top: 80px;
   }
   .footer-banner-image {
-    width: 77%;
+    width: 400px;
     left: 0;
     right: 0;
     top: initial;
-    bottom: 0;
-    height: 48%;
+    bottom: 10px;
+    height: 400px;
   }
   .banner-desc .left h3 {
     font-weight: 900;
@@ -739,19 +749,22 @@ span.text-red {
   .banner-desc {
     flex-wrap: wrap;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
   }
   .hero-banner-container {
     line-height: 1.3;
   }
   .hero-banner-container h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
   .hero-banner-container h3 {
-    font-size: 40px;
+    font-size: 30px;
   }
   .hero-banner-container button {
     margin-top: 90px;
     z-index: 10000;
+    width: 250px;
   }
   .desc {
     bottom: 60px;
@@ -848,16 +861,68 @@ span.text-red {
   }
 
   .footer-banner-image {
-    top: 0;
+    top: 5%;
     right: 0;
     height: 200px;
+  }
+
+  .hero-banner-container {
+    padding: 1rem 0;
+    line-height: unset;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-banner-container button {
+    margin-top: 2rem;
+  }
+
+  .hero-banner-container h3 {
+    font-size: 28px;
+  }
+  .hero-banner-container h1 {
+    font-size: 32px;
+  }
+
+  .hero-banner-image {
+    position: static;
+    margin: 0 auto;
+
+    width: auto;
+    height: 250px;
   }
 
   .hero-banner-container button {
     width: auto;
   }
 
+  .footer-banner-container {
+    height: max-content;
+  }
+
+  .banner-desc {
+    padding-top: 150px;
+  }
+
+  .banner-desc .left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .banner-desc .left h3,
+  .banner-desc .right h3 {
+    font-size: 2.2rem;
+  }
+
   .banner-desc .right {
     line-height: unset;
+    transform: translateX(0);
   }
 }

@@ -13,7 +13,8 @@ import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ product, products, slug }) => {
   const { decQty, incQty, qty, onAdd, setQty, setShowCart } = useStateContext();
-  const { image, name, detail, price } = product;
+
+  const { image, name, detail, price } = (product && product) || {};
   const [index, setIndex] = useState(0);
 
   const handleBuyNow = () => {
@@ -31,26 +32,29 @@ const ProductDetails = ({ product, products, slug }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img
-              src={urlFor(image && image[index])}
-              className="product-detail-image"
-            />
+            {product && (
+              <img
+                src={urlFor(image && image[index])}
+                className="product-detail-image"
+              />
+            )}
           </div>
           <div className="small-images-container">
-            {image?.map((item, i) => (
-              <img
-                key={i}
-                src={urlFor(item)}
-                className={
-                  i === index ? "small-image selected-image" : "small-image"
-                }
-                onMouseEnter={() => setIndex(i)}
-              />
-            ))}
+            {product &&
+              image?.map((item, i) => (
+                <img
+                  key={i}
+                  src={urlFor(item)}
+                  className={
+                    i === index ? "small-image selected-image" : "small-image"
+                  }
+                  onMouseEnter={() => setIndex(i)}
+                />
+              ))}
           </div>
         </div>
         <div className="product-detail-desc">
-          <h1>{name}</h1>
+          <h1>{product && name}</h1>
           <div className="reviews">
             <div>
               <AiFillStar />
@@ -62,8 +66,8 @@ const ProductDetails = ({ product, products, slug }) => {
             <p>(20)</p>
           </div>
           <h4>Details: </h4>
-          <p style={{ textAlign: "justify" }}>{detail}</p>
-          <p className="price">Rp. {numberWithCommas(price)}</p>
+          <p style={{ textAlign: "justify" }}>{product && detail}</p>
+          <p className="price">Rp. {numberWithCommas(product && price)}</p>
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
@@ -110,9 +114,11 @@ export async function getServerSideProps({ params: { slug } }) {
   const productsQuery = '*[_type == "product"]{ ..., category-> }';
 
   const product = await client.fetch(query);
+  console.log(product);
   const products = await client.fetch(productsQuery);
+  // console.log(products);
   const indexSpliceArr = products.findIndex(
-    (productItem) => product._id == productItem._id
+    (productItem) => product?._id == productItem?._id
   );
 
   products.splice(indexSpliceArr, 1);
